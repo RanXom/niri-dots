@@ -111,6 +111,7 @@ niri-dots/
 │   ├── nvim/        # Neovim config
 │   ├── zathura/     # zathura PDF viewer config
 │   └── starship.toml
+├── sddm/
 ├── wallpapers/
 └── README.md
 ```
@@ -147,6 +148,7 @@ starship
 zen-browser
 yazi
 eza
+sddm
 
 # Media / system
 pipewire
