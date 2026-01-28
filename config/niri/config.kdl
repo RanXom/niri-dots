@@ -375,6 +375,11 @@ window-rule {
     opacity 0.8
 }
 
+window-rule {
+    match app-id="obsidian"
+    open-maximized true
+}
+
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 // window-rule {
@@ -408,12 +413,15 @@ binds {
 
     Mod+Return hotkey-overlay-title="Open Terminal: kitty" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Ctrl+Shift+Escape hotkey-overlay-title="Open System Monitor: btop" { spawn-sh "kitty zsh -i -c btop"; }
     Mod+Alt+L hotkey-overlay-title="Lock the Screen: noctalia-shell" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     Mod+Shift+W hotkey-overlay-title="Change Wallpaper: noctalia-shell" { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
-    Mod+P hotkey-overlay-title="Session Menu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    Mod+Alt+P hotkey-overlay-title="Session Menu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
     Mod+B hotkey-overlay-title="Open Browser: Zen Browser" { spawn "zen-browser"; }
     Mod+E hotkey-overlay-title="Open File Manager: yazi" { spawn-sh "kitty zsh -i -c yazi"; }
+    Mod+P hotkey-overlay-title="Open Pomodoro: pomoru" { spawn-sh "kitty zsh -i -c pomoru"; }
     Mod+S hotkey-overlay-title="Open Spotify" { spawn "spotify"; }
+    Mod+O hotkey-overlay-title="Open Obsidian" { spawn "obsidian"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -445,7 +453,7 @@ binds {
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
-    Mod+O repeat=false { toggle-overview; }
+    Mod+Shift+O repeat=false { toggle-overview; }
 
     Mod+Q repeat=false { close-window; }
 
@@ -454,8 +462,8 @@ binds {
     Mod+Up    { focus-window-up; }
     Mod+Right { focus-column-right; }
     Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-down; }
-    Mod+K     { focus-window-up; }
+    Mod+U     { focus-window-down; }
+    Mod+I     { focus-window-up; }
     Mod+L     { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
@@ -507,8 +515,8 @@ binds {
 
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }
-    Mod+U              { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
+    Mod+J              { focus-workspace-down; }
+    Mod+K              { focus-workspace-up; }
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
     Mod+Ctrl+U         { move-column-to-workspace-down; }

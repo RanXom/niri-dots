@@ -175,8 +175,8 @@
         "darkMode": true,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "matugenSchemeType": "scheme-neutral",
-        "predefinedScheme": "Oxocarbon",
+        "matugenSchemeType": "scheme-content",
+        "predefinedScheme": "Tokyo Night",
         "schedulingMode": "off",
         "useWallpaperColors": true
     },
@@ -451,9 +451,9 @@
         "vicinae": false,
         "walker": false,
         "wezterm": false,
-        "yazi": false,
+        "yazi": true,
         "zed": false,
-        "zenBrowser": true
+        "zenBrowser": false
     },
     "ui": {
         "bluetoothDetailsViewMode": "grid",
